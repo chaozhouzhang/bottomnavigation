@@ -12,5 +12,9 @@
             <enum name="tablet" value="1"/>
             <enum name="phone" value="0"/>
         </attr>
+        <attr name="type" format="integer">
+            <enum name="fixed" value="1"/>
+            <enum name="dynamic" value="0"/>
+        </attr>
     </declare-styleable>
 </resources>

@@ -20,6 +20,7 @@
         android:elevation="6dp"
         android:layout_alignParentBottom="true"
         android:background="@android:color/white"
+        app:type="fixed"
         app:mode="phone">
         <com.ss.bottomnavigation.TabItem
             android:id="@+id/tab_home"

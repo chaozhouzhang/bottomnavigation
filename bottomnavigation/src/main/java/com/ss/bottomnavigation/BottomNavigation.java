@@ -44,7 +44,7 @@ public class BottomNavigation extends LinearLayout implements OnTabItemClickList
      * @see BottomNavigation#TYPE_FIXED
      * @see BottomNavigation#TYPE_DYNAMIC
      */
-    private int type;
+    private int type = TYPE_DYNAMIC;
 
     /**
      * If bottom navigation has only three items, then this constant used for {@link BottomNavigation#type}
@@ -175,11 +175,11 @@ public class BottomNavigation extends LinearLayout implements OnTabItemClickList
         if (getChildCount() > 0) {
             if (getChildCount() >= 3 && getChildCount() <= 5) {
 
-                if (getChildCount() > 3) {
-                    type = TYPE_DYNAMIC;
-                } else {
-                    type = TYPE_FIXED;
-                }
+//                if (getChildCount() > 3) {
+//                    type = TYPE_DYNAMIC;
+//                } else {
+//                    type = TYPE_FIXED;
+//                }
 
                 for (int i = 0; i < getChildCount(); i++) {
                     if (!(getChildAt(i) instanceof TabItem)) {
@@ -241,6 +241,7 @@ public class BottomNavigation extends LinearLayout implements OnTabItemClickList
             TypedArray typedArray = getContext().obtainStyledAttributes(attributeSet, R.styleable.BottomNavigation);
             try {
                 mode = typedArray.getInteger(R.styleable.BottomNavigation_mode, MODE_PHONE);
+                type = typedArray.getInteger(R.styleable.BottomNavigation_type, TYPE_DYNAMIC);
             } finally {
                 typedArray.recycle();
             }
@@ -252,9 +253,13 @@ public class BottomNavigation extends LinearLayout implements OnTabItemClickList
         return type;
     }
 
+    public void setType(int type) {
+        this.type = type;
+    }
+
     public void setDefaultItem(int position) {
         this.defaultItem = position;
-        this.selectedItemPosition=position;
+        this.selectedItemPosition = position;
     }
 
     public int getDefaultItem() {
@@ -291,10 +296,11 @@ public class BottomNavigation extends LinearLayout implements OnTabItemClickList
         this.mode = mode;
     }
 
-    public int getSelectedItem(){
+    public int getSelectedItem() {
         return selectedItemPosition;
     }
-    public void setSelectedItem(int position){
+
+    public void setSelectedItem(int position) {
         onTabItemClick(position);
     }
 
