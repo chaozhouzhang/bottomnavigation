@@ -29,6 +29,7 @@ public class DefaultStyleDynamicActivity extends AppCompatActivity{
 
         BottomNavigation bottomNavigation=(BottomNavigation)findViewById(R.id.bottom_navigation);
         bottomNavigation.setDefaultItem(2);
+        bottomNavigation.setType(BottomNavigation.TYPE_DYNAMIC);
         bottomNavigation.setOnSelectedItemChangeListener(new OnSelectedItemChangeListener() {
             @Override
             public void onSelectedItemChanged(int itemId) {
