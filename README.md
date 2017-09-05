@@ -1,3 +1,40 @@
+# 修改
+此版本在原作者的代码基础上做了部分修改，去除了"type"定义的Item个数限制，无论是3个或4个还是5个Item，均可以选择设置为Dynamic类型或Fixed类型，默认是Dynamic类型。
+## 示例
+### XML
+Dynamic Type:
+
+ ```xml
+    <com.ss.bottomnavigation.BottomNavigation
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        app:type="dynamic">
+```
+Fixed Type:
+
+```xml
+    <com.ss.bottomnavigation.BottomNavigation
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        app:type="fixed">
+```
+### Java
+Dynamic Type:
+
+```java
+bottomNavigation.setType(BottomNavigation.TYPE_DYNAMIC);
+```
+Fixed Type:
+
+```java
+bottomNavigation.setType(BottomNavigation.TYPE_FIXED);
+```
 # BottomNavigation
 Bottom navigation inspired by google material design guideline.
 <img src="https://github.com/saeedsh92/bottomnavigation/blob/master/demo_banner.png?raw=false" width="700">
@@ -175,3 +212,5 @@ Saeed shahini
 email: saeedshahiniit@gmail.com
 
 github: https://github.com/saeedsh92
+
+
