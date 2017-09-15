@@ -1,5 +1,9 @@
 # 修改
 此版本在原作者的代码基础上做了部分修改，去除了"type"定义的Item个数限制，无论是3个或4个还是5个Item，均可以选择设置为Dynamic类型或Fixed类型，默认是Dynamic类型。
+## Gradle
+```gradle
+compile 'com.github.chaozhouzhang:bottomnavigation:1.0.0'
+```
 ## 示例
 ### XML
 Dynamic Type:
